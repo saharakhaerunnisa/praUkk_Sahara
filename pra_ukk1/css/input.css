@@ -1,0 +1,73 @@
+/* style_form.css */
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center; /* Mengetengahkan secara horizontal */
+    align-items: center;     /* Mengetengahkan secara vertikal */
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px; /* Lebar maksimal form */
+}
+
+h1 {
+    color: #1a73e8;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+/* Mengatur label agar rapi di atas input */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Mengatur input agar memenuhi lebar container */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px; /* Jarak antar kolom input */
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box; /* Sangat penting agar padding tidak merusak lebar */
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #1a73e8;
+    outline: none;
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.2);
+}
+
+/* Mengatur tombol Update */
+button {
+    width: 100%;
+    padding: 14px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background-color: #1557b0;
+}
