@@ -1,0 +1,377 @@
+    .greeting-banner {
+      background: var(--secondary-dark);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .greeting-left h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-light);
+      letter-spacing: -0.01em;
+    }
+
+    .greeting-left h2 span {
+      color: var(--accent-color);
+    }
+
+    .greeting-left p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .greeting-right {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .info-pill {
+      background: var(--primary-dark);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 10px 16px;
+      text-align: center;
+    }
+
+    .info-pill .pill-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--accent-color);
+      line-height: 1;
+    }
+
+    .info-pill .pill-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    /* Navbar logout button */
+    .btn-logout {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid rgba(248, 113, 113, 0.3);
+      background: rgba(248, 113, 113, 0.08);
+      color: var(--danger);
+      font-family: inherit;
+      letter-spacing: 0.03em;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-logout:hover {
+      background: rgba(248, 113, 113, 0.15);
+      border-color: rgba(248, 113, 113, 0.5);
+    }
+
+    /* Student info chip in navbar */
+    .student-chip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-dark);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 5px 12px 5px 6px;
+    }
+
+    .student-chip .avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      font-size: 10px;
+    }
+
+    .student-chip .chip-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .student-chip .chip-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-light);
+      line-height: 1.2;
+    }
+
+    .student-chip .chip-nis {
+      font-size: 10px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Filter bar */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .filter-select {
+      background: var(--primary-dark);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 7px 12px;
+      color: var(--text-light);
+      font-size: 12px;
+      font-family: inherit;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+    }
+
+    .filter-select:focus {
+      border-color: var(--border-strong);
+    }
+
+    /* Borrow button */
+    .btn-borrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 12px;
+      border-radius: 7px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      background: rgba(52, 211, 153, 0.1);
+      color: var(--success);
+      font-family: inherit;
+      letter-spacing: 0.02em;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-borrow:hover {
+      background: rgba(52, 211, 153, 0.2);
+      border-color: rgba(52, 211, 153, 0.5);
+    }
+
+    .btn-borrow:disabled,
+    .btn-disabled {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 12px;
+      border-radius: 7px;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid var(--border-subtle);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: inherit;
+      letter-spacing: 0.02em;
+      cursor: not-allowed;
+      white-space: nowrap;
+    }
+
+    /* Search result count */
+    .result-count {
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 0 1.5rem;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.3);
+    }
+
+    .result-count span {
+      color: var(--accent-color);
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Empty state */
+    .empty-state {
+      padding: 4rem 2rem;
+      text-align: center;
+      color: var(--text-muted);
+    }
+
+    .empty-state .empty-icon {
+      font-size: 40px;
+      margin-bottom: 12px;
+      opacity: 0.5;
+    }
+
+    .empty-state p {
+      font-size: 14px;
+    }
+
+    /* Modal overlay */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.85);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-overlay.show {
+      display: flex;
+    }
+
+    .modal-box {
+      background: var(--secondary-dark);
+      border: 1px solid var(--border-strong);
+      border-radius: 16px;
+      padding: 2rem;
+      width: 400px;
+      max-width: 90vw;
+    }
+
+    .modal-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+
+    .modal-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .modal-book-info {
+      background: var(--primary-dark);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .modal-book-info .cover-placeholder {
+      width: 36px;
+      height: 48px;
+      flex-shrink: 0;
+    }
+
+    .modal-book-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-light);
+    }
+
+    .modal-book-author {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+
+    .modal-book-isbn {
+      font-size: 10px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      margin-top: 2px;
+    }
+
+    .modal-footer {
+      display: flex;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .modal-footer .btn-cancel {
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border-subtle);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .modal-footer .btn-cancel:hover {
+      color: var(--text-light);
+      border-color: var(--border-strong);
+    }
+
+    .modal-footer .btn-confirm {
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      background: var(--accent-color);
+      color: var(--primary-dark);
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    .modal-footer .btn-confirm:hover {
+      background: #7DD3FC;
+    }
+
+    /* Toast notification */
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--secondary-dark);
+      border: 1px solid rgba(52, 211, 153, 0.4);
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-light);
+      z-index: 300;
+      transform: translateY(80px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .toast-icon {
+      font-size: 18px;
+    }
+
+    /* Active tab indicator for navbar */
+    .navbar-siswa-info {
+      font-size: 11px;
+      color: var(--text-muted);
+      background: var(--accent-glow);
+      border: 1px solid var(--border-strong);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      color: var(--accent-color);
+    }
+
+    
