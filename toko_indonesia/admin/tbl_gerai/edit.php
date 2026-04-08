@@ -4,6 +4,17 @@ if (!isset($_SESSION['user_id'])) { header("Location: login.php"); }
 
 include '../../koneksi.php';
 
+
+$id = $_GET['id'];
+$sql = "SELECT * FROM gerai WHERE id='$id'";
+$result = mysqli_query($connect, $sql);
+if (mysqli_num_rows($result) > 0) {
+    $gerai = mysqli_fetch_assoc($result);
+} else {
+    echo "Gerai tidak ditemukan!";
+    exit();
+}
+
 if (isset($_POST['save'])) {
     $nama = $_POST['nama'];
     $alamat = $_POST['alamat'];
@@ -11,8 +22,13 @@ if (isset($_POST['save'])) {
     $telepon = $_POST['telepon'];
     $user_id = $_SESSION['user_id']; 
 
-    $sql = "INSERT INTO gerai (nama, alamat, kota, telepon, created_by) 
-            VALUES ('$nama', '$alamat', '$kota', '$telepon', '$user_id')";
+    $sql = "UPDATE gerai SET 
+            nama='$nama', 
+            alamat='$alamat', 
+            kota='$kota', 
+            telepon='$telepon', 
+            created_by='$user_id' 
+            WHERE id='$id'";
     
     if (mysqli_query($connect, $sql)) {
         echo "Gerai berhasil ditambahkan!";
@@ -36,12 +52,12 @@ if (isset($_POST['save'])) {
 <body>
 
 <div class="container">
-    <h1>Tambah data</h1><br>
-    <form method="POST">
-    <input type="text" name="nama" placeholder="Nama Gerai" required>
-    <textarea name="alamat" placeholder="Alamat"></textarea>
-    <input type="text" name="kota" placeholder="Kota">
-    <input type="text" name="telepon" placeholder="Telepon">
+    <h1>Edit data</h1><br>
+        <form method="POST">
+        <input type="text" name="nama" placeholder="Nama Gerai" value="<?= $gerai['nama']?>" required>
+    <textarea name="alamat" placeholder="Alamat"><?= $gerai['alamat']?></textarea>
+    <input type="text" name="kota" placeholder="Kota" value="<?= $gerai['kota']?>">
+    <input type="text" name="telepon" placeholder="Telepon" value="<?= $gerai['telepon']?>">
     <button type="submit" name="save">Simpan Gerai</button>
 </form>
 </div>

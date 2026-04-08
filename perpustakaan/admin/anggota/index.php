@@ -80,60 +80,7 @@
   <div class="main-wrapper">
 
     <!-- ─── SIDEBAR ─────────────────────────────────── -->
-    <aside class="sidebar">
-      <span class="sidebar-label">Menu Utama</span>
-
-      <a href="#" class="sidebar-item">
-        <span class="s-icon">🏠</span>
-        Dashboard
-      </a>
-      <a href="#" class="sidebar-item">
-        <span class="s-icon">📖</span>
-        Daftar Buku
-        <span class="sidebar-badge">248</span>
-      </a>
-      <a href="buku/add.php" class="sidebar-item">
-        <span class="s-icon">➕</span>
-        Tambah Buku
-      </a>
-      <a href="#" class="sidebar-item">
-        <span class="s-icon">🗂️</span>
-        Kategori
-      </a>
-
-      <span class="sidebar-label" style="margin-top: 8px;">Transaksi</span>
-
-      <a href="" class="sidebar-item">
-        <span class="s-icon">🔄</span>
-        Peminjaman
-        <span class="sidebar-badge">12</span>
-      </a>
-      <a href="#" class="sidebar-item">
-        <span class="s-icon">↩️</span>
-        Pengembalian
-      </a>
-      <a href="#" class="sidebar-item">
-        <span class="s-icon">📋</span>
-        Riwayat
-      </a>
-
-      <span class="sidebar-label" style="margin-top: 8px;">Anggota</span>
-
-      <a href="#" class="sidebar-item active">
-        <span class="s-icon">👥</span>
-        Semua Anggota
-      </a>
-      <a href="#" class="sidebar-item">
-        <span class="s-icon">➕</span>
-        Tambah Anggota
-      </a>
-
-      <span class="sidebar-label" style="margin-top: 8px;">Sistem</span>
-      <a href="#" class="sidebar-item">
-        <span class="s-icon">⚙️</span>
-        Pengaturan
-      </a>
-    </aside>
+  <?php include '../layouts/sidebar.php'; ?>
 
     <!-- ─── CONTENT ─────────────────────────────────── -->
     <main class="content">

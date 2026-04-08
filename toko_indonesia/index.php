@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
         }
         exit(); 
     } else {
-        echo "<script>alert('Username atau Kode Salah!'); window.location='login.php';</script>";
+        echo "<script>alert('Username atau Kode Salah!'); window.location='index.php';</script>";
     }
 }
 ?>
@@ -44,7 +44,7 @@ if (isset($_POST['login'])) {
         <form method="POST">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Kode User" required>
-            <br>
+            <br><br>
             <button type="submit" name="login">Login</button>
         </form>
     </div>

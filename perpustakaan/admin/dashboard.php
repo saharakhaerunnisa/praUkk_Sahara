@@ -38,102 +38,14 @@
   <link rel="stylesheet" href="../css/dashboard.css" />
 </head>
 <body>
-
   <!-- ─── NAVBAR ─────────────────────────────────────── -->
-  <nav class="navbar">
-    <a href="#" class="navbar-brand">
-      <div class="logo-icon">📚</div>
-      <span class="brand-name">PUSTAKA<span>X</span></span>
-    </a>
-
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a href="#" class="active">
-          <span class="nav-icon">📖</span>
-          BUKU
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="transaksi/riwayat.php">
-          <span class="nav-icon">🔄</span>
-          TRANSAKSI
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="#">
-          <span class="nav-icon">👤</span>
-          ANGGOTA
-        </a>
-      </li>
-    </ul>
-
-    <div class="navbar-end">
-      <button class="btn-notif">
-        🔔
-        <span class="notif-dot"></span>
-      </button>
-      <div class="avatar">AD</div>
-    </div>
-  </nav>
+   <?php include 'layouts/navbar.php'; ?>
 
   <!-- ─── MAIN LAYOUT ─────────────────────────────────── -->
   <div class="main-wrapper">
 
-    <!-- ─── SIDEBAR ─────────────────────────────────── -->
-    <aside class="sidebar">
-      <span class="sidebar-label">Menu Utama</span>
-
-      <a href="#" class="sidebar-item active">
-        <span class="s-icon">🏠</span>
-        Dashboard
-      </a>
-      <a href="#" class="sidebar-item">
-        <span class="s-icon">📖</span>
-        Daftar Buku
-        <span class="sidebar-badge">248</span>
-      </a>
-      <a href="buku/add.php" class="sidebar-item">
-        <span class="s-icon">➕</span>
-        Tambah Buku
-      </a>
-      <a href="#" class="sidebar-item">
-        <span class="s-icon">🗂️</span>
-        Kategori
-      </a>
-
-      <span class="sidebar-label" style="margin-top: 8px;">Transaksi</span>
-
-      <a href="transaksi/pinjam.php" class="sidebar-item">
-        <span class="s-icon">🔄</span>
-        Peminjaman
-        <span class="sidebar-badge">12</span>
-      </a>
-      <a href="transaksi/kembali.php" class="sidebar-item">
-        <span class="s-icon">↩️</span>
-        Pengembalian
-      </a>
-      <a href="transaksi/riwayat.php" class="sidebar-item">
-        <span class="s-icon">📋</span>
-        Riwayat
-      </a>
-
-      <span class="sidebar-label" style="margin-top: 8px;">Anggota</span>
-
-      <a href="anggota/index.php" class="sidebar-item">
-        <span class="s-icon">👥</span>
-        Semua Anggota
-      </a>
-      <a href="anggota/add.php" class="sidebar-item">
-        <span class="s-icon">➕</span>
-        Tambah Anggota
-      </a>
-
-      <span class="sidebar-label" style="margin-top: 8px;">Sistem</span>
-      <a href="#" class="sidebar-item">
-        <span class="s-icon">⚙️</span>
-        Pengaturan
-      </a>
-    </aside>
+  <!-- ─── SIDEBAR ─────────────────────────────────── -->
+  <?php include 'layouts/sidebar.php'; ?>
 
     <!-- ─── CONTENT ─────────────────────────────────── -->
     <main class="content">

@@ -1,5 +1,12 @@
 <?php
 include '../../koneksi.php';
+session_start();
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'gudang')
+{
+    header("Location: login.php");
+    exit();
+}
+
 if(isset($_POST['submit'])) {
     $id = $_POST['id'];
     $kategori = $_POST['kategori'];

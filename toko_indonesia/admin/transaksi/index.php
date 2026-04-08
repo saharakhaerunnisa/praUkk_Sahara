@@ -1,23 +1,14 @@
 <?php
 include '../../koneksi.php';
 
-if(isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $sql = "DELETE FROM distribusi WHERE id='$id'";
-    if(mysqli_query($connect, $sql)) {
-        echo "Data berhasil dihapus!";
-        header("Location: index.php");
-        exit();
-    } else {
-        echo "Error: " . mysqli_error($connect);
-    }
+session_start();
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header("Location: login.php");
+    exit();
 }
-
-$sql = "SELECT d.*, b.namaBarang, g.nama 
-        FROM distribusi d
-        LEFT JOIN barang b ON d.id_barang = b.id
-        LEFT JOIN gerai g ON d.id_gerai = g.id
-        ORDER BY d.id ASC";
+$sql = "SELECT t.*, b.namaBarang, g.nama FROM transaksi 
+        t LEFT JOIN barang b ON t.id_barang = b.id 
+        LEFT JOIN gerai g ON t.id_gerai = g.id";
 $result = mysqli_query($connect, $sql);
 
 ?>
@@ -27,19 +18,18 @@ $result = mysqli_query($connect, $sql);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pembelian</title>
     <link rel="stylesheet" href="../../css/table.css">
 </head>
 <body>
-    <h1>Data Distribusi</h1><br>
+    <h1>Panel Gerai - Transaksi Gerai</h1>
     <a href="../dashboard.php">Kembali</a>
-
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
             <th>ID</th>
             <th>Id Barang</th>
             <th>Nama Barang</th>
-            <th>Jual</th>
+            <th>Jumlah Beli</th>
             <th>Harga</th>
             <th>Id Gerai</th>
             <th>Nama Gerai</th>
@@ -51,25 +41,21 @@ $result = mysqli_query($connect, $sql);
                 while($row = mysqli_fetch_assoc($result)) :
         ?>
         <tr>
-            <td><?= htmlspecialchars($row['id'])?></td>
+            <td><?= htmlspecialchars($row['id_transaksi'])?></td>
             <td><?= htmlspecialchars($row['id_barang'])?></td>
             <td><?= htmlspecialchars($row['namaBarang']) ?? null ?></td>
             <td><?= htmlspecialchars($row['jumlah'])?></td>
-            <td><?= htmlspecialchars($row['harga'])?></td>
+            <td><?= htmlspecialchars($row['harga_barang'])?></td>
             <td><?= htmlspecialchars($row['id_gerai'])?></td>
             <td><?= htmlspecialchars($row['nama']) ?? null ?></td>
-            <td><?=  $row['status'] ?? 'Kosong' ?></td>
+            <td><?= htmlspecialchars($row['status'])?></td>
             <td>
-                <a href="edit.php?id=<?= $row['id']?>">Konfirmasi</a>
+                <a href="edit.php?id=<?= $row['id_transaksi']?>">Konfirmasi</a>
             </td>
-
-
         </tr>
         <?php
                     endwhile;
                 }   
         ?>
-    </table><br>
-    <hr>
 </body>
 </html>
