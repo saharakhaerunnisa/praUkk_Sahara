@@ -2,7 +2,6 @@
 session_start();
 include '../../koneksi.php';
 
-// Pastikan session ada, kalau tidak ada kita kasih angka dummy buat testing
 $user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : "Belum Login";
 
 if (isset($_POST['pesan'])) {
@@ -14,6 +13,11 @@ if (isset($_POST['pesan'])) {
     $data_barang = mysqli_fetch_assoc($query_barang);
     $harga_satuan = $data_barang['harga'];
     $total_harga = $harga_satuan * $jumlah;
+
+    $query_stok = mysqli_query($connect, "SELECT stock FROM barang WHERE id = '$id_barang'");
+    if($jumlah > $query_stok) {
+        echo "<script>alert('Perhatian, jumlah stok kurang!'); window.location='index.php';</script>";
+    }
 
     $sql = "INSERT INTO transaksi (id_gerai, id_barang, jumlah, harga_barang, total_harga, status) 
             VALUES ('$id_gerai', '$id_barang', '$jumlah', '$harga_satuan', '$total_harga', 'Pending')";
